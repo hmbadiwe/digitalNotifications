@@ -1,0 +1,58 @@
+
+<html data-ng-app="digiNotifApp">
+    <head>
+        <title>Digital Notifications</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet" media="screen" />
+    </head>
+    <body>
+        <div>
+            <div style="width: 800px; margin-left: auto; margin-right: auto">
+                <div style="float: left">
+                    <textarea ck-editor name="editor1" ng-model="notificationEditor"></textarea>
+                </div>
+                <div style="float: left">
+                    <table class="table table-hover table-bordered" >
+                        <thead>
+                            <tr>
+                                <th>List of variables</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>$orderNumber</td>
+                        </tr>
+                        <tr>
+                            <td>$name</td>
+                        </tr>
+                        <tr>
+                            <td>$address</td>
+                        </tr>
+                        <tr>
+                            <td>$zipcode</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div>
+                        <input type="text" placeholder="Enter Order Number"><button class="btn">Preview</button>
+                    </div>
+                    <div class="error" style="color: red">Order Number Not Found!</div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <br/>
+        <div style="clear: both;"></div>
+        <br/>
+
+        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="js/lib/bootstrap/bootstrap.js"></script>
+        <script src="js/lib/angular/angular.js"></script>
+        <script src="js/lib/angular/angular-route.js"></script>
+        <script src="js/lib/angular/angular-resource.js"></script>
+        <script src="js/lib/angular/angular-strap.js"></script>
+        <script src="js/lib/angular/angular-strap.tpl.js"></script>
+        <script src="js/lib/angular/angular-ui-router.js"></script>
+        <script src="js/lib/ckeditor/ckeditor.js"></script>
+        <script src="js/app.js"></script>
+    </body>
+</html>
