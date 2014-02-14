@@ -14,6 +14,15 @@ import java.util.List;
 public class Service implements Serializable{
     private String name;
     private List<String> params = new ArrayList<String>();
+    private Integer oid;
+
+    public Integer getOid() {
+        return oid;
+    }
+
+    public void setOid(Integer oid) {
+        this.oid = oid;
+    }
 
     public String getName(){
         return name;

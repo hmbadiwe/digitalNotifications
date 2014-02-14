@@ -11,8 +11,9 @@
 
             <div style="width: 800px; margin-left: auto; margin-right: auto">
                 <div style="margin-left: auto; margin-right: auto">
-                    <select data-ng-model="service" ui-select2 style="width:250px">
-                        <option data-ng-repeat="service in services">{{service.name}}</option>
+                    Order Type :
+                    <select data-ng-model="serviceId" ui-select2 style="width:250px">
+                        <option data-ng-repeat="service in services" value="{{service.oid}}">{{service.name}}</option>
                     </select>
                 </div>
                 <br/>
@@ -28,18 +29,14 @@
                             </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>$orderNumber</td>
-                        </tr>
-                        <tr>
-                            <td>$name</td>
-                        </tr>
-                        <tr>
-                            <td>$address</td>
-                        </tr>
-                        <tr>
-                            <td>$zipcode</td>
-                        </tr>
+                            <div data-ng-if="base">
+                                <tr data-ng-repeat="param in base.params">
+                                     <td>${{param}}</td>
+                                </tr>
+                            </div>
+                            <tr data-ng-repeat="param in additionalParams">
+                                <td>${{param}}</td>
+                            </tr>
                         </tbody>
                     </table>
                     <div>
@@ -56,6 +53,7 @@
 
         <script src="js/lib/jquery-1.10.2.min.js"></script>
         <script src="js/lib/bootstrap/bootstrap.js"></script>
+        <script src="js/lib/underscore-min.js"></script>
         <script src="js/lib/select2.min.js"></script>
         <script src="js/lib/angular/angular.js"></script>
         <script src="js/lib/angular/angular-route.js"></script>
