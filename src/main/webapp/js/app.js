@@ -6,7 +6,7 @@
  * To change this template use File | Settings | File Templates.
  */
 
-var digiNotifApp = angular.module( 'digiNotifApp', ['ngResource']) ;
+var digiNotifApp = angular.module( 'digiNotifApp', [ 'ngResource', 'ui.select2' ]) ;
 
 digiNotifApp.directive('ckEditor', function() {
     return {

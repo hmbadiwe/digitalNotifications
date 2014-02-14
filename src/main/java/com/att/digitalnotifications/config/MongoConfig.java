@@ -1,4 +1,4 @@
-package com.att.digitalnotifications;
+package com.att.digitalnotifications.config;
 
 import com.mongodb.Mongo;
 import org.springframework.beans.factory.annotation.Configurable;
@@ -13,7 +13,7 @@ import org.springframework.data.mongodb.core.MongoTemplate;
  * To change this template use File | Settings | File Templates.
  */
 @Configurable
-public class AppConfig {
+public class MongoConfig {
     public @Bean
     Mongo mongo() throws Exception {
         return new Mongo("localhost");

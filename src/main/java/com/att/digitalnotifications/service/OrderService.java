@@ -1,5 +1,8 @@
 package com.att.digitalnotifications.service;
 
+
+import com.att.digitalnotifications.domain.Service;
+
 import java.util.List;
 
 /**
@@ -10,5 +13,5 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public interface OrderService {
-    public List<String> availableServices();
+    public List<Service> availableServices();
 }
