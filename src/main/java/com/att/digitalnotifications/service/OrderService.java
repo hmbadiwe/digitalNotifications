@@ -1,6 +1,7 @@
 package com.att.digitalnotifications.service;
 
 
+import com.att.digitalnotifications.domain.Order;
 import com.att.digitalnotifications.domain.Service;
 
 import java.util.List;
@@ -14,4 +15,6 @@ import java.util.List;
  */
 public interface OrderService {
     public List<Service> availableServices();
+    public Order findByOrderNumber(String orderNumber, String orderType);
+
 }

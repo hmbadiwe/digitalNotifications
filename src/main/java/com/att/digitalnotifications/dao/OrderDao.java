@@ -1,5 +1,6 @@
 package com.att.digitalnotifications.dao;
 
+import com.att.digitalnotifications.domain.Order;
 import com.att.digitalnotifications.domain.Service;
 
 import java.util.List;
@@ -14,4 +15,5 @@ import java.util.List;
 public interface OrderDao {
 
     public List<Service> orderTypes();
+    public Order findByOrderNumber(String orderNumber, String orderType);
 }

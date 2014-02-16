@@ -1,9 +1,13 @@
 package com.att.digitalnotifications.dao;
 
-import com.att.digitalnotifications.domain.Service;
+import com.att.digitalnotifications.domain.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoOperations;
+import static org.springframework.data.mongodb.core.query.Criteria.where;
+
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Component;
+import static org.springframework.data.mongodb.core.query.Query.query;
 
 
 import java.util.List;
@@ -25,5 +29,27 @@ public class OrderDaoImpl implements OrderDao {
         List<Service> services = mongoOperations.findAll(Service.class, "services" );
         return services;
 
+    }
+
+    @Override
+    public Order findByOrderNumber(String orderNumber, String orderType) {
+        Order order;
+        Query orderQuery = query(where("orderNumber").is(orderNumber));
+        Class<? extends Order> orderClass;
+        if( "Dsl".equals( orderType) ){
+            orderClass = DslOrder.class;
+        }
+        else if("Telephone".equals(orderType)){
+           orderClass = TelephoneOrder.class;
+        }
+        else if( "Uverse".equals( orderType ) ){
+            orderClass = UverseOrder.class;
+        }
+        else{
+            throw new IllegalArgumentException("Unknown order type");
+        }
+
+        order = mongoOperations.findOne(orderQuery, orderClass);
+        return order;
     }
 }

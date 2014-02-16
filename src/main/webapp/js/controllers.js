@@ -3,6 +3,24 @@ var ServiceController = function( $scope, $http ){
         $scope.base = undefined;
         $scope.serviceId = undefined;
         $scope.additionalParams = [];
+        $scope.translatedMessage = "<pre>Microphone Check</pre>";
+        $scope.showError = false;
+        $scope.submitOrder = function(){
+            $scope.showError = false;
+            $scope.translatedMessage = undefined;
+             var data = {
+                 orderId : $scope.orderId,
+                 orderType : $scope.orderType,
+                 messageBody : $scope.messageBody
+             };
+             $http.post( '/rest/order/translate', data )
+                 .success( function( response ){
+                     $scope.translatedMessage = response.body;
+                 })
+                 .error( function( errorData){
+                    $scope.showError = true;
+                 });
+        };
         $http.get('/rest/order/types')
             .success( function(services){
                 var svcArray = [];
@@ -25,6 +43,7 @@ var ServiceController = function( $scope, $http ){
               return elem.oid == newVal;
             });
             if( service ){
+                $scope.orderType = service.name;
                 $scope.additionalParams = ( service.params || [] );
             }
         }

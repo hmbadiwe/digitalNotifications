@@ -1,12 +1,12 @@
 package com.att.digitalnotifications.service.impl;
 
-import com.att.digitalnotifications.service.OrderService;
+import com.att.digitalnotifications.domain.Order;
 import com.att.digitalnotifications.service.TranslatorService;
-import org.apache.velocity.VelocityContext;
-import org.apache.velocity.app.Velocity;
-import org.apache.velocity.app.VelocityEngine;
-import org.springframework.beans.factory.annotation.Autowired;
+import freemarker.template.Configuration;
+import freemarker.template.Template;
+import org.springframework.stereotype.Component;
 
+import java.io.StringReader;
 import java.io.StringWriter;
 
 /**
@@ -16,25 +16,19 @@ import java.io.StringWriter;
  * Time: 11:14 AM
  * To change this template use File | Settings | File Templates.
  */
+@Component
 public class TranslatorServiceImpl implements TranslatorService {
 
-    private VelocityEngine ve = null;
 
-    @Autowired
-    private OrderService orderService;
-
-    public VelocityEngine getVelocityEngine(){
-        if( ve != null ){
-            ve = new VelocityEngine();
-            //ve.setProperty( VelocityEngine.RUN);
+    public String translate(String input, Order order){
+        try{
+            Template t = new Template("name", new StringReader(input), new Configuration());
+            StringWriter writer = new StringWriter();
+            t.process( order, writer );
+            return writer.toString();
         }
-        return ve;
-    }
-
-    public String translate(String input, String orderNumber){
-        VelocityContext context = new VelocityContext();
-        StringWriter writer = new StringWriter();
-         getVelocityEngine().evaluate( context, writer, "log_tag", input );
-        return writer.toString();
+        catch( Exception e ){
+           throw new RuntimeException("Error processing template");
+        }
     }
 }

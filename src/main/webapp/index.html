@@ -8,49 +8,55 @@
     </head>
     <body>
         <div data-ng-controller="ServiceController">
-
-            <div style="width: 800px; margin-left: auto; margin-right: auto">
-                <div style="margin-left: auto; margin-right: auto">
-                    Order Type :
-                    <select data-ng-model="serviceId" ui-select2 style="width:250px">
-                        <option data-ng-repeat="service in services" value="{{service.oid}}">{{service.name}}</option>
-                    </select>
-                </div>
-                <br/>
-                <br/>
-                <div style="float: left">
-                    <textarea ck-editor name="editor1" ng-model="notificationEditor"></textarea>
-                </div>
-                <div style="float: left">
-                    <table class="table table-hover table-bordered" >
-                        <thead>
-                            <tr>
-                                <th>List of variables</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <div data-ng-if="base">
-                                <tr data-ng-repeat="param in base.params">
-                                     <td>${{param}}</td>
+            <div>
+                <div style="width: 800px; margin-left: auto; margin-right: auto" >
+                    <form name="orderSubmitForm">
+                        <div style="margin-left: auto; margin-right: auto">
+                            Order Type :
+                            <select data-ng-model="serviceId" ui-select2 style="width:250px" required>
+                                <option data-ng-repeat="service in services" value="{{service.oid}}">{{service.name}}</option>
+                            </select>
+                        </div>
+                        <br/>
+                        <br/>
+                        <div style="float: left">
+                            <textarea ck-editor name="editor1" ng-model="messageBody" required></textarea>
+                        </div>
+                        <div style="float: left">
+                            <table class="table table-hover table-bordered" >
+                                <thead>
+                                <tr>
+                                    <th>List of variables</th>
                                 </tr>
+                                </thead>
+                                <tbody>
+                                <div data-ng-if="base">
+                                    <tr data-ng-repeat="param in base.params">
+                                        <td>${{param}}</td>
+                                    </tr>
+                                </div>
+                                <tr data-ng-repeat="param in additionalParams">
+                                    <td>${{param}}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <div >
+                                <input type="text" placeholder="Enter Order Number" data-ng-model="orderId" required><button class="btn" data-ng-disabled="orderSubmitForm.$invalid" data-ng-click="submitOrder()">Preview</button>
                             </div>
-                            <tr data-ng-repeat="param in additionalParams">
-                                <td>${{param}}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div>
-                        <input type="text" placeholder="Enter Order Number"><button class="btn">Preview</button>
-                    </div>
-                    <div class="error" style="color: red">Order Number Not Found!</div>
+                            <div class="error" style="color: red" data-ng-show="showError">Order Number Not Found!</div>
+                        </div>
+                    </form>
                 </div>
+
+            </div>
+            <hr>
+            <br/>
+            <div style="clear: both"></div>
+            <br/>
+            <div style="margin-left: 500px; margin-right: auto; width: 600px">
+                <pre>{{translatedMessage}}</pre>
             </div>
         </div>
-        <hr>
-        <br/>
-        <div style="clear: both;"></div>
-        <br/>
-
         <script src="js/lib/jquery-1.10.2.min.js"></script>
         <script src="js/lib/bootstrap/bootstrap.js"></script>
         <script src="js/lib/underscore-min.js"></script>

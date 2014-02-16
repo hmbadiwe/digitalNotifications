@@ -1,5 +1,7 @@
 package com.att.digitalnotifications.service;
 
+import com.att.digitalnotifications.domain.Order;
+
 /**
  * Created with IntelliJ IDEA.
  * User: hmbadiwe
@@ -9,5 +11,5 @@ package com.att.digitalnotifications.service;
  */
 public interface TranslatorService {
 
-    public String translate( String input, String orderNumber );
+    public String translate( String input, Order order );
 }

@@ -1,6 +1,7 @@
 package com.att.digitalnotifications.service.impl;
 
 import com.att.digitalnotifications.dao.OrderDao;
+import com.att.digitalnotifications.domain.Order;
 import com.att.digitalnotifications.domain.Service;
 import com.att.digitalnotifications.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowire;
@@ -30,5 +31,11 @@ public class OrderServiceImpl implements OrderService {
 
         List<Service> serviceList =  orderDao.orderTypes();
         return serviceList;
+    }
+
+    @Override
+    public Order findByOrderNumber(String orderNumber, String orderType) {
+        Order order = orderDao.findByOrderNumber( orderNumber, orderType );
+        return order;
     }
 }
