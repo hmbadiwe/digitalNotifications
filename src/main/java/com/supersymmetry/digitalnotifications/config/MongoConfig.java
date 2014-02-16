@@ -1,4 +1,4 @@
-package com.att.digitalnotifications.config;
+package com.supersymmetry.digitalnotifications.config;
 
 import com.mongodb.Mongo;
 import org.springframework.beans.factory.annotation.Configurable;

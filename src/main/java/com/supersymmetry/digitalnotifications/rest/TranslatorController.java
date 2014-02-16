@@ -1,11 +1,10 @@
-package com.att.digitalnotifications.rest;
+package com.supersymmetry.digitalnotifications.rest;
 
-import com.att.digitalnotifications.domain.Order;
-import com.att.digitalnotifications.domain.TranslatorResponseBody;
-import com.att.digitalnotifications.domain.TranslatorPayload;
-import com.att.digitalnotifications.exceptions.OrderNotFoundException;
-import com.att.digitalnotifications.service.OrderService;
-import com.att.digitalnotifications.service.TranslatorService;
+import com.supersymmetry.digitalnotifications.domain.Order;
+import com.supersymmetry.digitalnotifications.domain.TranslatorResponseBody;
+import com.supersymmetry.digitalnotifications.domain.TranslatorPayload;
+import com.supersymmetry.digitalnotifications.service.OrderService;
+import com.supersymmetry.digitalnotifications.service.TranslatorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

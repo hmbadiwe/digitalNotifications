@@ -1,4 +1,4 @@
-package com.att.digitalnotifications.exceptions;
+package com.supersymmetry.digitalnotifications.exceptions;
 
 /**
  * Created with IntelliJ IDEA.

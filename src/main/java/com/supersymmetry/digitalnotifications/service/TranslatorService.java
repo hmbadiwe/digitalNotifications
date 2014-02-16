@@ -1,6 +1,6 @@
-package com.att.digitalnotifications.service;
+package com.supersymmetry.digitalnotifications.service;
 
-import com.att.digitalnotifications.domain.Order;
+import com.supersymmetry.digitalnotifications.domain.Order;
 
 /**
  * Created with IntelliJ IDEA.

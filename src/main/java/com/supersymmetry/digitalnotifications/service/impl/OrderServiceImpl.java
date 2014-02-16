@@ -1,12 +1,10 @@
-package com.att.digitalnotifications.service.impl;
+package com.supersymmetry.digitalnotifications.service.impl;
 
-import com.att.digitalnotifications.dao.OrderDao;
-import com.att.digitalnotifications.domain.Order;
-import com.att.digitalnotifications.domain.Service;
-import com.att.digitalnotifications.service.OrderService;
-import org.springframework.beans.factory.annotation.Autowire;
+import com.supersymmetry.digitalnotifications.dao.OrderDao;
+import com.supersymmetry.digitalnotifications.domain.Order;
+import com.supersymmetry.digitalnotifications.domain.Service;
+import com.supersymmetry.digitalnotifications.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;

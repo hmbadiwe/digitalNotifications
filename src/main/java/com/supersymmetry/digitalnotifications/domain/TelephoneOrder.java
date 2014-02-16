@@ -1,4 +1,4 @@
-package com.att.digitalnotifications.domain;
+package com.supersymmetry.digitalnotifications.domain;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 

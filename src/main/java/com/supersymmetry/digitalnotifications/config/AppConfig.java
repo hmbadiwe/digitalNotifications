@@ -1,4 +1,4 @@
-package com.att.digitalnotifications.config;
+package com.supersymmetry.digitalnotifications.config;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -14,6 +14,6 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan( basePackages = "com.att.digitalnotifications")
+@ComponentScan( basePackages = "com.supersymmetry.digitalnotifications")
 public class AppConfig {
 }

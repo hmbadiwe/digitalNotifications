@@ -1,4 +1,4 @@
-package com.att.digitalnotifications.config;
+package com.supersymmetry.digitalnotifications.config;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,7 +9,6 @@ import org.springframework.web.context.support.AnnotationConfigWebApplicationCon
 import org.springframework.web.servlet.DispatcherServlet;
 
 import javax.servlet.ServletContext;
-import javax.servlet.ServletException;
 import javax.servlet.ServletRegistration;
 import java.util.Set;
 
@@ -28,7 +27,6 @@ public class RestAppInitializer implements WebApplicationInitializer {
         WebApplicationContext rootContext = createRootContext(servletContext);
 
         configureSpringMvc(servletContext, rootContext);
-
     }
 
     private WebApplicationContext createRootContext(ServletContext servletContext) {

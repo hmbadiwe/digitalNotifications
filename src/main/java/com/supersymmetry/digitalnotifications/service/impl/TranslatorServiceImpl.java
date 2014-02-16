@@ -1,7 +1,7 @@
-package com.att.digitalnotifications.service.impl;
+package com.supersymmetry.digitalnotifications.service.impl;
 
-import com.att.digitalnotifications.domain.Order;
-import com.att.digitalnotifications.service.TranslatorService;
+import com.supersymmetry.digitalnotifications.domain.Order;
+import com.supersymmetry.digitalnotifications.service.TranslatorService;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import org.springframework.stereotype.Component;

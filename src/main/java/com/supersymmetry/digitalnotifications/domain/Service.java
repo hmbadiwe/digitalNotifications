@@ -1,4 +1,4 @@
-package com.att.digitalnotifications.domain;
+package com.supersymmetry.digitalnotifications.domain;
 
 import java.io.Serializable;
 import java.util.ArrayList;

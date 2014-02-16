@@ -1,7 +1,7 @@
-package com.att.digitalnotifications.dao;
+package com.supersymmetry.digitalnotifications.dao;
 
-import com.att.digitalnotifications.domain.Order;
-import com.att.digitalnotifications.domain.Service;
+import com.supersymmetry.digitalnotifications.domain.Order;
+import com.supersymmetry.digitalnotifications.domain.Service;
 
 import java.util.List;
 

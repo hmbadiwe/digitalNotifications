@@ -1,4 +1,4 @@
-package com.att.digitalnotifications.domain;
+package com.supersymmetry.digitalnotifications.domain;
 
 /**
  * Created with IntelliJ IDEA.

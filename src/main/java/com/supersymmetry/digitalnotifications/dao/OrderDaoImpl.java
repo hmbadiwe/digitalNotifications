@@ -1,6 +1,6 @@
-package com.att.digitalnotifications.dao;
+package com.supersymmetry.digitalnotifications.dao;
 
-import com.att.digitalnotifications.domain.*;
+import com.supersymmetry.digitalnotifications.domain.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoOperations;
 import static org.springframework.data.mongodb.core.query.Criteria.where;
