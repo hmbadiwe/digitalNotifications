@@ -9,6 +9,6 @@ digitalNotifications
   * Enter an order number in the field.
   * Enter a template with the variables displayed.
   * Order numbers to test : 
-    Dsl ==>100AB202, 10020BABZ, 10020BABQ
-    Telephone => 100AB200, 100AB900,
-    Uverse => 100AB800
+     Dsl ==>100AB202, 10020BABZ, 10020BABQ
+     Telephone => 100AB200, 100AB900,
+     Uverse => 100AB800
