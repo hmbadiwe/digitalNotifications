@@ -32,11 +32,11 @@
                                 <tbody>
                                 <div data-ng-if="base">
                                     <tr data-ng-repeat="param in base.params">
-                                        <td>${{param}}</td>
+                                        <td>{{decorateParam(param)}}</td>
                                     </tr>
                                 </div>
                                 <tr data-ng-repeat="param in additionalParams">
-                                    <td>${{param}}</td>
+                                    <td>{{decorateParam(param)}}</td>
                                 </tr>
                                 </tbody>
                             </table>

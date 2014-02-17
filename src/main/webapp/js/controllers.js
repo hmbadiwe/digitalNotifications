@@ -5,6 +5,9 @@ var ServiceController = function( $scope, $http ){
         $scope.additionalParams = [];
         $scope.translatedMessage = "<pre>Microphone Check</pre>";
         $scope.showError = false;
+        $scope.decorateParam = function( input ){
+            return '${' + input + '}';
+        };
         $scope.submitOrder = function(){
             $scope.showError = false;
             $scope.translatedMessage = undefined;
