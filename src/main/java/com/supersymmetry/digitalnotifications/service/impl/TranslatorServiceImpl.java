@@ -25,10 +25,11 @@ public class TranslatorServiceImpl implements TranslatorService {
             Template t = new Template("name", new StringReader(input), new Configuration());
             StringWriter writer = new StringWriter();
             t.process( order, writer );
+            writer.close();
             return writer.toString();
         }
         catch( Exception e ){
-           throw new RuntimeException("Error processing template");
+           throw new RuntimeException("Error processing template", e);
         }
     }
 }
